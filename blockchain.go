@@ -29,7 +29,6 @@ import (
 	peer "github.com/libp2p/go-libp2p-peer"
 	pstore "github.com/libp2p/go-libp2p-peerstore"
 	ma "github.com/multiformats/go-multiaddr"
-	// "github.com/gorilla/handlers"
 )
 
 const difficulty = 5
@@ -54,12 +53,13 @@ type Block struct {
 // Blockchain is a series of validated Blocks
 var Blockchain []Block
 
-// Message takes incoming JSON payload for writing heart rate
+// Message takes incoming JSON payload for writing author
 type Message struct {
 	Penulis  string `json:"penulis"`
 	Checksum string `json:"checksum"`
 }
 
+//MessageCheck takes incoming JSON paylod for checking author
 type MessageCheck struct {
 	Checksum string `json:"checksum"`
 }
